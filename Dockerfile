@@ -7,9 +7,10 @@ RUN a2enmod rewrite
 RUN apt-get update && apt-get install -y \
     libonig-dev \
     libzip-dev \
+    libpng-dev \
     unzip \
     zip \
-    && docker-php-ext-install mbstring pdo pdo_mysql
+    && docker-php-ext-install mbstring pdo pdo_mysql gd
 
 # Copy Kanboard files into the container
 COPY . /var/www/html/
